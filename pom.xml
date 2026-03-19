@@ -10,7 +10,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.4.1</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
 
     <groupId>com.khadar</groupId>
@@ -100,7 +100,7 @@
 
     <build>
         <plugins>
-            <!-- Compiler plugin with release version -->
+            <!-- Compiler plugin with release version and annotation processor -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -111,6 +111,7 @@
                         <path>
                             <groupId>org.springframework.boot</groupId>
                             <artifactId>spring-boot-configuration-processor</artifactId>
+                            <version>3.4.1</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
