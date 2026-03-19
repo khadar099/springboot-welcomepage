@@ -6,6 +6,15 @@
 </head>
 <body>
     <h1>Welcome to Your Spring Boot Application!</h1>
+    
+    <!-- Display username of logged-in user -->
+    <p>Logged in as: <span th:text="${#authentication.name}">User</span></p>
+    
     <p>This is the home page.</p>
+    
+    <!-- Logout link -->
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
 </body>
 </html>
