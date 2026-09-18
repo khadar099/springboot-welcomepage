@@ -23,7 +23,7 @@
         background-image:
             linear-gradient(rgba(0, 0, 0, 0.45),
                             rgba(0, 0, 0, 0.45)),
-            url('/images/background1.jpg');
+            url('/images/background.jpg');
 
         background-size: cover;
         background-position: center;
@@ -47,11 +47,12 @@
         left: 0;
     }
 
-    /* Login / Signup /Track Order */
+    /* Login / Signup / Track Order */
 
     .auth-buttons {
         display: flex;
         gap: 15px;
+        align-items: center;
     }
 
     .auth-buttons a {
@@ -128,9 +129,13 @@
             letter-spacing: 4px;
         }
 
+        .auth-buttons {
+            gap: 8px;
+        }
+
         .auth-buttons a {
-            padding: 9px 16px;
-            font-size: 12px;
+            padding: 9px 14px;
+            font-size: 11px;
         }
     }
 
@@ -142,11 +147,15 @@
 <body>
 
 ```
-<!-- Login / Signup /Track Order -->
+<!-- Login / Signup / Track Order -->
 
 <header>
 
     <div class="auth-buttons">
+
+        <a href="/track-order">
+            TRACK ORDER
+        </a>
 
         <a href="/login">
             LOGIN
