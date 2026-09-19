@@ -2,14 +2,27 @@ package com.khadar.welcomepage;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @Controller
 public class WelcomeController {
 
     @GetMapping("/")
     public String welcome() {
-        return "welcome"; // Refers to welcome.html (if using Thymeleaf)
+        return "welcome";
+    }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @GetMapping("/signup")
+    public String signup() {
+        return "signup";
+    }
+
+    @GetMapping("/track-order")
+    public String trackOrder() {
+        return "track-order";
     }
 }
