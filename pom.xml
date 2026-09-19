@@ -17,7 +17,7 @@
     <artifactId>welcome-page</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>welcome-page</name>
-    <description>Demo project for welcomepage</description>
+    <description>KB STRIDE Welcome Page</description>
 
     <properties>
         <java.version>17</java.version>
@@ -26,7 +26,48 @@
 
     <dependencies>
 
-        <!-- Spring Boot starters -->
+        <!-- ============================= -->
+        <!-- Spring Boot -->
+        <!-- ============================= -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!-- ============================= -->
+        <!-- Database / JPA -->
+        <!-- ============================= -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- H2 Database -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- ============================= -->
+        <!-- Password Encryption -->
+        <!-- ============================= -->
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+        </dependency>
+
+        <!-- ============================= -->
+        <!-- Existing Template / Web Support -->
+        <!-- ============================= -->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -40,31 +81,6 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-crypto</artifactId>
-        </dependency>
-         
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web-services</artifactId>
         </dependency>
 
@@ -73,22 +89,18 @@
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
 
-        <!-- Spring Session -->
+        <!-- ============================= -->
+        <!-- JDBC -->
+        <!-- ============================= -->
 
         <dependency>
-            <groupId>org.springframework.session</groupId>
-            <artifactId>spring-session-jdbc</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
-        <!-- H2 Database -->
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- Optional / Runtime tools -->
+        <!-- ============================= -->
+        <!-- Development Tools -->
+        <!-- ============================= -->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -110,7 +122,9 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- ============================= -->
         <!-- Testing -->
+        <!-- ============================= -->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -130,7 +144,7 @@
 
         <plugins>
 
-            <!-- Compiler plugin -->
+            <!-- Maven Compiler -->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -141,20 +155,17 @@
                     <release>${java.version}</release>
 
                     <annotationProcessorPaths>
-
                         <path>
                             <groupId>org.springframework.boot</groupId>
                             <artifactId>spring-boot-configuration-processor</artifactId>
                             <version>3.4.1</version>
                         </path>
-
                     </annotationProcessorPaths>
 
                 </configuration>
-
             </plugin>
 
-            <!-- Spring Boot plugin -->
+            <!-- Spring Boot -->
 
             <plugin>
                 <groupId>org.springframework.boot</groupId>
