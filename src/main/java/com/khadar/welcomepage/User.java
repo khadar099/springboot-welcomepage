@@ -1,4 +1,3 @@
-```java
 package com.khadar.welcomepage;
 
 import jakarta.persistence.*;
@@ -88,4 +87,3 @@ public class User {
         this.createdAt = createdAt;
     }
 }
-```
