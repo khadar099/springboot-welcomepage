@@ -23,33 +23,38 @@ public class UserService {
     // ==========================
     // SIGNUP
     // ==========================
-    public String registerUser(String fullName,
-                               String email,
-                               String mobile,
-                               String password) {
+    public String registerUser(
+            String fullName,
+            String email,
+            String password) {
 
         fullName = fullName == null ? "" : fullName.trim();
         email = email == null ? "" : email.trim().toLowerCase();
-        mobile = mobile == null ? "" : mobile.trim();
         password = password == null ? "" : password;
 
+        // Validate email
         if (!EMAIL_PATTERN.matcher(email).matches()) {
             return "INVALID_EMAIL";
         }
 
+        // Check if email already exists
         if (userRepository.existsByEmailIgnoreCase(email)) {
             return "EMAIL_EXISTS";
         }
 
+        // Create new user
         User user = new User();
 
         user.setFullName(fullName);
         user.setEmail(email);
-        user.setMobile(mobile);
 
-        String encryptedPassword = passwordEncoder.encode(password);
+        // Encrypt password before saving
+        String encryptedPassword =
+                passwordEncoder.encode(password);
+
         user.setPassword(encryptedPassword);
 
+        // Save user
         userRepository.save(user);
 
         return "SUCCESS";
@@ -58,7 +63,9 @@ public class UserService {
     // ==========================
     // LOGIN
     // ==========================
-    public String loginUser(String email, String password) {
+    public String loginUser(
+            String email,
+            String password) {
 
         email = email == null ? "" : email.trim().toLowerCase();
         password = password == null ? "" : password;
@@ -74,7 +81,10 @@ public class UserService {
         User user = userOptional.get();
 
         // User exists, but password is incorrect
-        if (!passwordEncoder.matches(password, user.getPassword())) {
+        if (!passwordEncoder.matches(
+                password,
+                user.getPassword())) {
+
             return "INVALID_PASSWORD";
         }
 
