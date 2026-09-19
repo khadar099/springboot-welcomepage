@@ -1,14 +1,16 @@
-# Use an official Java runtime as a parent image
 FROM eclipse-temurin:17-jdk-jammy
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the .jar file into the container at /app
+# Create directory for the H2 database
+RUN mkdir -p /app/data
+
+# Copy the JAR file into the container
 COPY target/welcome-page-0.0.1-SNAPSHOT.jar /app/welcome-page.jar
 
-# Make the container's port 8080 available to the outside world
-EXPOSE 8080
+# Application runs on port 8181
+EXPOSE 8181
 
-# Run the jar file when the container starts
+# Run the application
 ENTRYPOINT ["java", "-jar", "welcome-page.jar"]
