@@ -40,7 +40,10 @@ public class WelcomeController {
             @RequestParam String password,
             Model model) {
 
-        String result = userService.loginUser(email, password);
+        String result = userService.loginUser(
+                email,
+                password
+        );
 
         // Login successful
         if ("SUCCESS".equals(result)) {
@@ -65,6 +68,7 @@ public class WelcomeController {
             return "login";
         }
 
+        // Unexpected error
         model.addAttribute(
                 "error",
                 "Something went wrong. Please try again."
@@ -91,17 +95,9 @@ public class WelcomeController {
             @RequestParam String password,
             Model model) {
 
-        /*
-         * Mobile number is currently not collected
-         * from the signup form.
-         *
-         * We pass an empty value for now because
-         * the User entity still contains the mobile column.
-         */
         String result = userService.registerUser(
                 fullName,
                 email,
-                "",
                 password
         );
 
