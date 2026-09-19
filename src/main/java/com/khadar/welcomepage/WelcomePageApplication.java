@@ -1,18 +1,12 @@
 package com.khadar.welcomepage;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@Controller
-public class WelcomeController {
+@SpringBootApplication
+public class WelcomePageApplication {
 
-    @GetMapping("/")
-    public String welcome() {
-        return "welcome";
-    }
-
-    @GetMapping("/login")
-    public String login() {
-        return "login";
+    public static void main(String[] args) {
+        SpringApplication.run(WelcomePageApplication.class, args);
     }
 }
