@@ -23,9 +23,6 @@ public class User {
     private String email;
 
     @Column(nullable = false)
-    private String mobile;
-
-    @Column(nullable = false)
     private String password;
 
     @Column(name = "created_at", nullable = false)
@@ -37,7 +34,9 @@ public class User {
         createdAt = LocalDateTime.now();
     }
 
+    // ==========================
     // Getters and Setters
+    // ==========================
 
     public Long getId() {
         return id;
@@ -61,14 +60,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
     }
 
     public String getPassword() {
